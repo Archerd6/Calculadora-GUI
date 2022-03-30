@@ -521,6 +521,7 @@ public class Calculadora_GUI {
 				}
 				else
 				{
+					
 					StringBuilder sb = new StringBuilder(textField.getText());
 					
 					if(sb.toString().contains("+") || sb.toString().contains("-") || sb.toString().contains("/") || sb.toString().contains("*") || sb.toString().contains(".") || sb.toString().contains("!"))
