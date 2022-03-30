@@ -7,6 +7,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class Calculadora_GUI {
 
@@ -41,6 +42,7 @@ public class Calculadora_GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Calculadora_GUI.class.getResource("/imgs/snake.png")));
 		frame.setBounds(100, 100, 278, 463);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
