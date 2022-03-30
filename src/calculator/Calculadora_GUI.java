@@ -11,8 +11,6 @@ import java.awt.Toolkit;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
-import javax.swing.JLabel;
-import javax.swing.JTextPane;
 import javax.swing.JEditorPane;
 
 public class Calculadora_GUI {
@@ -235,8 +233,12 @@ public class Calculadora_GUI {
 		
 		JButton btn_menos = new JButton("-");
 		btn_menos.setBackground(SystemColor.scrollbar);
-		btn_menos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btn_menos.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String texto=textField.getText()+btn_menos.getText();
+				textField.setText(texto);
 			}
 		});
 		btn_menos.setBounds(200, 156, 52, 44);
@@ -245,8 +247,12 @@ public class Calculadora_GUI {
 		
 		JButton btn_por = new JButton("*");
 		btn_por.setBackground(SystemColor.scrollbar);
-		btn_por.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btn_por.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String texto=textField.getText()+btn_por.getText();
+				textField.setText(texto);
 			}
 		});
 		btn_por.setBounds(200, 211, 52, 44);
@@ -255,8 +261,12 @@ public class Calculadora_GUI {
 		
 		JButton btn_divide = new JButton("/");
 		btn_divide.setBackground(SystemColor.scrollbar);
-		btn_divide.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btn_divide.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String texto=textField.getText()+btn_divide.getText();
+				textField.setText(texto);
 //				first=Double.parseDouble(textField.getText());
 //				textField.setText("");
 //				operation="/";
@@ -280,8 +290,12 @@ public class Calculadora_GUI {
 		
 		JButton btn_dot = new JButton(".");
 		btn_dot.setBackground(SystemColor.scrollbar);
-		btn_dot.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btn_dot.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String texto=textField.getText()+btn_dot.getText();
+				textField.setText(texto);
 			}
 		});
 		btn_dot.setBounds(72, 321, 52, 44);
@@ -308,8 +322,12 @@ public class Calculadora_GUI {
 		
 		JButton btn_fact = new JButton("!");
 		btn_fact.setBackground(SystemColor.scrollbar);
-		btn_fact.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		btn_fact.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				String texto=textField.getText()+btn_fact.getText();
+				textField.setText(texto);
 //				first=Double.parseDouble(textField.getText());
 //				textField.setText("");
 //				operation="%";
