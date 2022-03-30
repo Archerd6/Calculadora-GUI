@@ -40,6 +40,7 @@ public class Calculadora_GUI {
 	public Calculadora_GUI() {
 		initialize();
 	}
+	
 
 	/**
 	 * Initialize the contents of the frame.
@@ -218,13 +219,46 @@ public class Calculadora_GUI {
 		btn_mas.setBackground(SystemColor.scrollbar);
 		btn_mas.addActionListener(new ActionListener()
 		{
+			private boolean isNumeric(String str)
+			{ 
+				  try
+				  {  
+				    Double.parseDouble(str);  
+				    return true;
+				  }
+				  catch(NumberFormatException e)
+				  {  
+				    return false;  
+				  }  
+			}
 			public void actionPerformed(ActionEvent e)
 			{
-				String texto=textField.getText()+btn_mas.getText();
-				textField.setText(texto);
-//				first=Double.parseDouble(textField.getText());
-//				textField.setText("");
-//				operation="+";
+				if(textField.getText().equals(""))
+				{
+					
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder(textField.getText());
+					
+					if(this.isNumeric((String) sb.subSequence(sb.length()-1, sb.length())))
+					{
+							String texto=textField.getText()+btn_mas.getText();
+							textField.setText(texto);
+					}
+					else
+					{
+						if(sb.subSequence(sb.length()-1, sb.length()).equals("-") && sb.length()<2)
+						{
+							
+						}
+						else
+						{
+							String texto=sb.subSequence(0, sb.length()-1)+btn_mas.getText();
+							textField.setText(texto);
+						}
+					}
+				}
 			}
 		});
 		btn_mas.setBounds(200, 101, 52, 44);
@@ -235,10 +269,47 @@ public class Calculadora_GUI {
 		btn_menos.setBackground(SystemColor.scrollbar);
 		btn_menos.addActionListener(new ActionListener()
 		{
+			private boolean isNumeric(String str)
+			{ 
+				  try
+				  {  
+				    Double.parseDouble(str);  
+				    return true;
+				  }
+				  catch(NumberFormatException e)
+				  {  
+				    return false;  
+				  }  
+			}
 			public void actionPerformed(ActionEvent e)
 			{
-				String texto=textField.getText()+btn_menos.getText();
-				textField.setText(texto);
+				if(textField.getText().equals(""))
+				{
+					String texto=textField.getText()+btn_menos.getText();
+					textField.setText(texto);
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder(textField.getText());
+					
+					if(this.isNumeric((String) sb.subSequence(sb.length()-1, sb.length())))
+					{
+							String texto=textField.getText()+btn_menos.getText();
+							textField.setText(texto);
+					}
+					else
+					{
+						if(sb.subSequence(sb.length()-1, sb.length()).equals("-"))
+						{
+							
+						}
+						else
+						{
+							String texto=sb.subSequence(0, sb.length()-1)+btn_menos.getText();
+							textField.setText(texto);
+						}
+					}
+				}
 			}
 		});
 		btn_menos.setBounds(200, 156, 52, 44);
@@ -249,10 +320,46 @@ public class Calculadora_GUI {
 		btn_por.setBackground(SystemColor.scrollbar);
 		btn_por.addActionListener(new ActionListener()
 		{
+			private boolean isNumeric(String str)
+			{ 
+				  try
+				  {  
+				    Double.parseDouble(str);  
+				    return true;
+				  }
+				  catch(NumberFormatException e)
+				  {  
+				    return false;  
+				  }  
+			}
 			public void actionPerformed(ActionEvent e)
 			{
-				String texto=textField.getText()+btn_por.getText();
-				textField.setText(texto);
+				if(textField.getText().equals(""))
+				{
+					
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder(textField.getText());
+					
+					if(this.isNumeric((String) sb.subSequence(sb.length()-1, sb.length())))
+					{
+							String texto=textField.getText()+btn_por.getText();
+							textField.setText(texto);
+					}
+					else
+					{
+						if(sb.subSequence(sb.length()-1, sb.length()).equals("-") && sb.length()<2)
+						{
+							
+						}
+						else
+						{
+							String texto=sb.subSequence(0, sb.length()-1)+btn_por.getText();
+							textField.setText(texto);
+						}
+					}
+				}
 			}
 		});
 		btn_por.setBounds(200, 211, 52, 44);
@@ -263,13 +370,46 @@ public class Calculadora_GUI {
 		btn_divide.setBackground(SystemColor.scrollbar);
 		btn_divide.addActionListener(new ActionListener()
 		{
+			private boolean isNumeric(String str)
+			{ 
+				  try
+				  {  
+				    Double.parseDouble(str);  
+				    return true;
+				  }
+				  catch(NumberFormatException e)
+				  {  
+				    return false;  
+				  }  
+			}
 			public void actionPerformed(ActionEvent e)
 			{
-				String texto=textField.getText()+btn_divide.getText();
-				textField.setText(texto);
-//				first=Double.parseDouble(textField.getText());
-//				textField.setText("");
-//				operation="/";
+				if(textField.getText().equals(""))
+				{
+					
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder(textField.getText());
+					
+					if(this.isNumeric((String) sb.subSequence(sb.length()-1, sb.length())))
+					{
+							String texto=textField.getText()+btn_divide.getText();
+							textField.setText(texto);
+					}
+					else
+					{
+						if(sb.subSequence(sb.length()-1, sb.length()).equals("-") && sb.length()<2)
+						{
+							
+						}
+						else
+						{
+							String texto=sb.subSequence(0, sb.length()-1)+btn_divide.getText();
+							textField.setText(texto);
+						}
+					}
+				}
 			}
 		});
 		btn_divide.setBounds(196, 266, 52, 44);
@@ -292,12 +432,49 @@ public class Calculadora_GUI {
 		btn_dot.setBackground(SystemColor.scrollbar);
 		btn_dot.addActionListener(new ActionListener()
 		{
+			private boolean isNumeric(String str)
+			{ 
+				  try
+				  {  
+				    Double.parseDouble(str);  
+				    return true;
+				  }
+				  catch(NumberFormatException e)
+				  {  
+				    return false;  
+				  }  
+			}
 			public void actionPerformed(ActionEvent e)
 			{
-				String texto=textField.getText()+btn_dot.getText();
-				textField.setText(texto);
+				if(textField.getText().equals(""))
+				{
+					
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder(textField.getText());
+					
+					if(this.isNumeric((String) sb.subSequence(sb.length()-1, sb.length())))
+					{
+						if(sb.toString().contains("."))
+						{
+							if(sb.toString().contains("+") || sb.toString().contains("-") || sb.toString().contains("*") || sb.toString().contains("/"))
+							{
+								String texto=textField.getText()+btn_dot.getText();
+								textField.setText(texto);
+							}
+						}
+						else
+						{
+							String texto=textField.getText()+btn_dot.getText();
+							textField.setText(texto);
+						}
+					}
+				}
 			}
+			
 		});
+
 		btn_dot.setBounds(72, 321, 52, 44);
 		frmCalculadora.getContentPane().add(btn_dot);
 		btn_dot.setFocusable(false);
@@ -324,13 +501,53 @@ public class Calculadora_GUI {
 		btn_fact.setBackground(SystemColor.scrollbar);
 		btn_fact.addActionListener(new ActionListener()
 		{
+			private boolean isNumeric(String str)
+			{ 
+				  try
+				  {  
+				    Double.parseDouble(str);  
+				    return true;
+				  }
+				  catch(NumberFormatException e)
+				  {  
+				    return false;  
+				  }  
+			}
 			public void actionPerformed(ActionEvent e)
 			{
-				String texto=textField.getText()+btn_fact.getText();
-				textField.setText(texto);
-//				first=Double.parseDouble(textField.getText());
-//				textField.setText("");
-//				operation="%";
+				if(textField.getText().equals(""))
+				{
+					
+				}
+				else
+				{
+					StringBuilder sb = new StringBuilder(textField.getText());
+					
+					if(sb.toString().contains("+") || sb.toString().contains("-") || sb.toString().contains("/") || sb.toString().contains("*") || sb.toString().contains(".") || sb.toString().contains("!"))
+					{
+						
+					}
+					else
+					{
+						if(this.isNumeric((String) sb.subSequence(sb.length()-1, sb.length())))
+						{
+								String texto=textField.getText()+btn_fact.getText();
+								textField.setText(texto);
+						}
+						else
+						{
+							if(sb.subSequence(sb.length()-1, sb.length()).equals("-") && sb.length()<2)
+							{
+								
+							}
+							else
+							{
+								String texto=sb.subSequence(0, sb.length()-1)+btn_fact.getText();
+								textField.setText(texto);
+							}
+						}
+					}
+				}
 			}
 		});
 		btn_fact.setBounds(200, 321, 52, 44);
