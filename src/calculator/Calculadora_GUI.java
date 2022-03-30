@@ -8,6 +8,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
 
 public class Calculadora_GUI {
 
@@ -42,7 +46,9 @@ public class Calculadora_GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Calculadora_GUI.class.getResource("/imgs/snake.png")));
+		frame.setBackground(SystemColor.window);
+		frame.getContentPane().setBackground(SystemColor.controlHighlight);
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Calculadora_GUI.class.getResource("/imgs/indice.png")));
 		frame.setBounds(100, 100, 278, 463);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -52,15 +58,19 @@ public class Calculadora_GUI {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JButton btn_B = new JButton("B");
+		JButton btn_B = new JButton("\u2190");
+		btn_B.setBackground(SystemColor.scrollbar);
+		btn_B.setFont(new Font("Tahoma", Font.BOLD, 18));
 		btn_B.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btn_B.setBounds(10, 101, 52, 44);
 		frame.getContentPane().add(btn_B);
+		btn_B.setFocusable(false);
 		
 		JButton btn_7 = new JButton("7");
+		btn_7.setBackground(SystemColor.scrollbar);
 		btn_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_7.getText();
@@ -69,8 +79,10 @@ public class Calculadora_GUI {
 		});
 		btn_7.setBounds(10, 156, 52, 44);
 		frame.getContentPane().add(btn_7);
+		btn_7.setFocusable(false);
 		
 		JButton btn_4 = new JButton("4");
+		btn_4.setBackground(SystemColor.scrollbar);
 		btn_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_4.getText();
@@ -79,8 +91,10 @@ public class Calculadora_GUI {
 		});
 		btn_4.setBounds(10, 211, 52, 44);
 		frame.getContentPane().add(btn_4);
+		btn_4.setFocusable(false);
 		
 		JButton btn_1 = new JButton("1");
+		btn_1.setBackground(SystemColor.scrollbar);
 		btn_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_1.getText();
@@ -89,8 +103,10 @@ public class Calculadora_GUI {
 		});
 		btn_1.setBounds(10, 266, 52, 44);
 		frame.getContentPane().add(btn_1);
+		btn_1.setFocusable(false);
 		
 		JButton btn_C = new JButton("C");
+		btn_C.setBackground(SystemColor.scrollbar);
 		btn_C.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textField.setText("");
@@ -98,8 +114,10 @@ public class Calculadora_GUI {
 		});
 		btn_C.setBounds(72, 101, 52, 44);
 		frame.getContentPane().add(btn_C);
+		btn_C.setFocusable(false);
 		
 		JButton btn_8 = new JButton("8");
+		btn_8.setBackground(SystemColor.scrollbar);
 		btn_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_8.getText();
@@ -108,8 +126,10 @@ public class Calculadora_GUI {
 		});
 		btn_8.setBounds(72, 156, 52, 44);
 		frame.getContentPane().add(btn_8);
+		btn_8.setFocusable(false);
 		
 		JButton btn_5 = new JButton("5");
+		btn_5.setBackground(SystemColor.scrollbar);
 		btn_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_5.getText();
@@ -118,8 +138,10 @@ public class Calculadora_GUI {
 		});
 		btn_5.setBounds(72, 211, 52, 44);
 		frame.getContentPane().add(btn_5);
+		btn_5.setFocusable(false);
 		
 		JButton btn_2 = new JButton("2");
+		btn_2.setBackground(SystemColor.scrollbar);
 		btn_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_2.getText();
@@ -128,8 +150,10 @@ public class Calculadora_GUI {
 		});
 		btn_2.setBounds(72, 266, 52, 44);
 		frame.getContentPane().add(btn_2);
+		btn_2.setFocusable(false);
 		
 		JButton btn_00 = new JButton("00");
+		btn_00.setBackground(SystemColor.scrollbar);
 		btn_00.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_00.getText();
@@ -138,8 +162,10 @@ public class Calculadora_GUI {
 		});
 		btn_00.setBounds(134, 101, 52, 44);
 		frame.getContentPane().add(btn_00);
+		btn_00.setFocusable(false);
 		
 		JButton btn_9 = new JButton("9");
+		btn_9.setBackground(SystemColor.scrollbar);
 		btn_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_9.getText();
@@ -148,8 +174,10 @@ public class Calculadora_GUI {
 		});
 		btn_9.setBounds(134, 156, 52, 44);
 		frame.getContentPane().add(btn_9);
+		btn_9.setFocusable(false);
 		
 		JButton btn_6 = new JButton("6");
+		btn_6.setBackground(SystemColor.scrollbar);
 		btn_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_6.getText();
@@ -158,8 +186,10 @@ public class Calculadora_GUI {
 		});
 		btn_6.setBounds(134, 211, 52, 44);
 		frame.getContentPane().add(btn_6);
+		btn_6.setFocusable(false);
 		
 		JButton btn_3 = new JButton("3");
+		btn_3.setBackground(SystemColor.scrollbar);
 		btn_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_3.getText();
@@ -168,8 +198,10 @@ public class Calculadora_GUI {
 		});
 		btn_3.setBounds(134, 266, 52, 44);
 		frame.getContentPane().add(btn_3);
+		btn_3.setFocusable(false);
 		
 		JButton btn_mas = new JButton("+");
+		btn_mas.setBackground(SystemColor.scrollbar);
 		btn_mas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				first=Double.parseDouble(textField.getText());
@@ -179,16 +211,30 @@ public class Calculadora_GUI {
 		});
 		btn_mas.setBounds(200, 101, 52, 44);
 		frame.getContentPane().add(btn_mas);
+		btn_mas.setFocusable(false);
 		
 		JButton btn_menos = new JButton("-");
+		btn_menos.setBackground(SystemColor.scrollbar);
+		btn_menos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_menos.setBounds(200, 156, 52, 44);
 		frame.getContentPane().add(btn_menos);
+		btn_menos.setFocusable(false);
 		
 		JButton btn_por = new JButton("*");
+		btn_por.setBackground(SystemColor.scrollbar);
+		btn_por.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_por.setBounds(200, 211, 52, 44);
 		frame.getContentPane().add(btn_por);
+		btn_por.setFocusable(false);
 		
 		JButton btn_divide = new JButton("/");
+		btn_divide.setBackground(SystemColor.scrollbar);
 		btn_divide.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				first=Double.parseDouble(textField.getText());
@@ -198,8 +244,10 @@ public class Calculadora_GUI {
 		});
 		btn_divide.setBounds(196, 266, 52, 44);
 		frame.getContentPane().add(btn_divide);
+		btn_divide.setFocusable(false);
 		
 		JButton btn_0 = new JButton("0");
+		btn_0.setBackground(SystemColor.scrollbar);
 		btn_0.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String number=textField.getText()+btn_0.getText();
@@ -208,12 +256,20 @@ public class Calculadora_GUI {
 		});
 		btn_0.setBounds(10, 321, 52, 44);
 		frame.getContentPane().add(btn_0);
+		btn_0.setFocusable(false);
 		
 		JButton btn_dot = new JButton(".");
+		btn_dot.setBackground(SystemColor.scrollbar);
+		btn_dot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btn_dot.setBounds(72, 321, 52, 44);
 		frame.getContentPane().add(btn_dot);
+		btn_dot.setFocusable(false);
 		
 		JButton btn_Primo = new JButton("P?");
+		btn_Primo.setBackground(SystemColor.scrollbar);
 		btn_Primo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				String answer;
@@ -228,8 +284,10 @@ public class Calculadora_GUI {
 		});
 		btn_Primo.setBounds(134, 321, 52, 44);
 		frame.getContentPane().add(btn_Primo);
+		btn_Primo.setFocusable(false);
 		
 		JButton btn_fact = new JButton("!");
+		btn_fact.setBackground(SystemColor.scrollbar);
 		btn_fact.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 //				first=Double.parseDouble(textField.getText());
@@ -239,9 +297,16 @@ public class Calculadora_GUI {
 		});
 		btn_fact.setBounds(200, 321, 52, 44);
 		frame.getContentPane().add(btn_fact);
+		btn_fact.setFocusable(false);
 		
 		JButton btn_igual = new JButton("=");
+		btn_igual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btn_igual.setBackground(new Color(232, 98, 76));
 		btn_igual.setBounds(10, 376, 240, 38);
 		frame.getContentPane().add(btn_igual);
+		btn_igual.setFocusable(false);
 	}
 }
