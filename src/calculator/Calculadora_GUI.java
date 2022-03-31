@@ -634,35 +634,38 @@ public class Calculadora_GUI {
 					}
 				}
 				String[] arrayNumeros = Cadenas.toString().split("\\ ");
-				String Operacion = EntradaBuilder.subSequence(EntradaBuilder.indexOf(arrayNumeros[1])-1,EntradaBuilder.indexOf(arrayNumeros[1])).toString();
-				Double resultado = 0.0;
-				if(Operacion.equals("+"))
+				if(arrayNumeros.length > 1)
 				{
-					Double uno = Double.parseDouble(arrayNumeros[0]);
-					Double dos = Double.parseDouble(arrayNumeros[1]);
-					resultado = RealCalculator.suma(uno, dos);
+					String Operacion = EntradaBuilder.subSequence(EntradaBuilder.lastIndexOf(arrayNumeros[1])-1,EntradaBuilder.lastIndexOf(arrayNumeros[1])).toString();
+					Double resultado = 0.0;
+					if(Operacion.equals("+"))
+					{
+						Double uno = Double.parseDouble(arrayNumeros[0]);
+						Double dos = Double.parseDouble(arrayNumeros[1]);
+						resultado = RealCalculator.suma(uno, dos);
+					}
+					if(Operacion.equals("-"))
+					{
+						Double uno = Double.parseDouble(arrayNumeros[0]);
+						Double dos = Double.parseDouble(arrayNumeros[1]);
+						resultado = RealCalculator.resta(uno, dos);
+					}
+					if(Operacion.equals("*"))
+					{
+						Double uno = Double.parseDouble(arrayNumeros[0]);
+						Double dos = Double.parseDouble(arrayNumeros[1]);
+						resultado = RealCalculator.mult(uno, dos);
+					}
+					if(Operacion.equals("/"))
+					{
+						Double uno = Double.parseDouble(arrayNumeros[0]);
+						Double dos = Double.parseDouble(arrayNumeros[1]);
+						resultado = RealCalculator.divide(uno, dos);
+					}
+					System.out.println(entrada+" |Primer calculo -> |"+resultado);
+					textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+1));
+					System.out.println(EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+1));
 				}
-				if(Operacion.equals("-"))
-				{
-					Double uno = Double.parseDouble(arrayNumeros[0]);
-					Double dos = Double.parseDouble(arrayNumeros[1]);
-					resultado = RealCalculator.resta(uno, dos);
-				}
-				if(Operacion.equals("*"))
-				{
-					Double uno = Double.parseDouble(arrayNumeros[0]);
-					Double dos = Double.parseDouble(arrayNumeros[1]);
-					resultado = RealCalculator.mult(uno, dos);
-				}
-				if(Operacion.equals("/"))
-				{
-					Double uno = Double.parseDouble(arrayNumeros[0]);
-					Double dos = Double.parseDouble(arrayNumeros[1]);
-					resultado = RealCalculator.divide(uno, dos);
-				}
-				System.out.println(resultado);
-				
-				
 			}
 		});
 		btn_igual.setBackground(new Color(232, 98, 76));
