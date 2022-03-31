@@ -615,6 +615,8 @@ public class Calculadora_GUI {
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				// TODO Factorial
+				// TODO Primo
 				if(textField.getText().equals("12345"))
 				{
 					Serpiente t = new Serpiente();
