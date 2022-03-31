@@ -492,8 +492,31 @@ public class Calculadora_GUI {
 						{
 							if(sb.toString().contains("+") || sb.toString().contains("-") || sb.toString().contains("*") || sb.toString().contains("/"))
 							{
-								String texto=textField.getText()+btn_dot.getText();
-								textField.setText(texto);
+								int countMas = sb.toString().length() - sb.toString().replace("+", "").length();
+								int countMenos = sb.toString().length() - sb.toString().replace("-", "").length();
+								int countPor = sb.toString().length() - sb.toString().replace("*", "").length();
+								int countDiv = sb.toString().length() - sb.toString().replace("/", "").length();
+								int total = countMas + countMenos + countPor + countDiv;
+								if((sb.toString().length() - sb.toString().replace(".", "").length() - 1)<total)
+								{
+									String texto=textField.getText()+btn_dot.getText();
+									textField.setText(texto);
+								}
+							}
+							else
+							{
+								String texto=textField.getText();
+//								String[] array = texto.split("\\|");
+//								
+//								String textoPRO = array[array.length -1];
+								if(texto.toString().contains("."))
+								{
+									textField.setText(texto);
+								}
+								else
+								{
+									textField.setText(texto+btn_dot.getText());
+								}
 							}
 						}
 						else
@@ -592,11 +615,13 @@ public class Calculadora_GUI {
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				if(textField.getText().equals("D"))
+				if(textField.getText().equals("12345"))
 				{
 					Serpiente t = new Serpiente();
 			     	t.setVisible(true);
 				}
+				
+				
 			}
 		});
 		btn_igual.setBackground(new Color(232, 98, 76));
