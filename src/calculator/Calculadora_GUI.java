@@ -308,8 +308,25 @@ public class Calculadora_GUI {
 						}
 						else
 						{
-							String texto=sb.subSequence(0, sb.length()-1)+btn_menos.getText();
-							textField.setText(texto);
+							//Condicion especial menos
+							if(sb.subSequence(sb.length()-1, sb.length()).equals("*") || sb.subSequence(sb.length()-1, sb.length()).equals("/"))
+							{
+								if(sb.subSequence(sb.length()-2, sb.length()-1).equals("*") || sb.subSequence(sb.length()-2, sb.length()-1).equals("/"))
+								{
+									String texto=sb.subSequence(0, sb.length()-2).toString();
+									textField.setText(texto);
+								}
+								
+								String texto=textField.getText()+btn_menos.getText();
+								textField.setText(texto);
+							}
+							else
+							{
+								String texto=sb.subSequence(0, sb.length()-1)+btn_menos.getText();
+								textField.setText(texto);
+							}
+							
+
 						}
 					}
 				}
@@ -360,6 +377,12 @@ public class Calculadora_GUI {
 						{
 							String texto=sb.subSequence(0, sb.length()-1)+btn_por.getText();
 							textField.setText(texto);
+							
+							if(sb.subSequence(sb.length()-1, sb.length()).equals("-"))
+							{
+								String texto2=sb.subSequence(0, sb.length()-1).toString();
+								textField.setText(texto2);
+							}
 						}
 					}
 				}
@@ -410,6 +433,12 @@ public class Calculadora_GUI {
 						{
 							String texto=sb.subSequence(0, sb.length()-1)+btn_divide.getText();
 							textField.setText(texto);
+							
+							if(sb.subSequence(sb.length()-1, sb.length()).equals("-"))
+							{
+								String texto2=sb.subSequence(0, sb.length()-1).toString();
+								textField.setText(texto2);
+							}
 						}
 					}
 				}
