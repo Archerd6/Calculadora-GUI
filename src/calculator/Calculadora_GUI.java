@@ -51,11 +51,12 @@ public class Calculadora_GUI {
 	 */
 	private void initialize() {
 		frmCalculadora = new JFrame();
+		frmCalculadora.setResizable(false);
 		frmCalculadora.setTitle("Calculadora");
 		frmCalculadora.setBackground(SystemColor.window);
 		frmCalculadora.getContentPane().setBackground(SystemColor.controlHighlight);
 		frmCalculadora.setIconImage(Toolkit.getDefaultToolkit().getImage(Calculadora_GUI.class.getResource("/imgs/indice.png")));
-		frmCalculadora.setBounds(100, 100, 278, 463);
+		frmCalculadora.setBounds(100, 100, 279, 463);
 		frmCalculadora.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmCalculadora.getContentPane().setLayout(null);
 		
@@ -445,7 +446,7 @@ public class Calculadora_GUI {
 				}
 			}
 		});
-		btn_divide.setBounds(196, 266, 52, 44);
+		btn_divide.setBounds(200, 266, 52, 44);
 		frmCalculadora.getContentPane().add(btn_divide);
 		btn_divide.setFocusable(false);
 		
@@ -675,7 +676,7 @@ public class Calculadora_GUI {
 			}
 		});
 		btn_igual.setBackground(new Color(232, 98, 76));
-		btn_igual.setBounds(10, 376, 240, 38);
+		btn_igual.setBounds(10, 376, 242, 38);
 		frmCalculadora.getContentPane().add(btn_igual);
 		btn_igual.setFocusable(false);
 		
