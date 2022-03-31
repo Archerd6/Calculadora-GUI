@@ -623,6 +623,7 @@ public class Calculadora_GUI {
 			     	t.setVisible(true);
 				}
 				
+				
 				Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
 				String entrada = textField.getText();
 				StringBuilder EntradaBuilder = new StringBuilder(entrada);
