@@ -623,7 +623,6 @@ public class Calculadora_GUI {
 			     	t.setVisible(true);
 				}
 				
-				
 				Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
 				String entrada = textField.getText();
 				StringBuilder EntradaBuilder = new StringBuilder(entrada);
@@ -637,6 +636,10 @@ public class Calculadora_GUI {
 					}
 				}
 				String[] arrayNumeros = Cadenas.toString().split("\\ ");
+				if(EntradaBuilder.subSequence(0, 1).equals("-"))
+				{
+					arrayNumeros[0]= "-"+arrayNumeros[0];
+				}
 				if(arrayNumeros.length > 1)
 				{
 					String Operacion = EntradaBuilder.subSequence(EntradaBuilder.lastIndexOf(arrayNumeros[1])-1,EntradaBuilder.lastIndexOf(arrayNumeros[1])).toString();
@@ -666,8 +669,8 @@ public class Calculadora_GUI {
 						resultado = RealCalculator.divide(uno, dos);
 					}
 					System.out.println(entrada+" |Primer calculo -> |"+resultado);
-					textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+1));
-					System.out.println(EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+1));
+					textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
+					System.out.println(EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
 				}
 			}
 		});
