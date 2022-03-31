@@ -9,6 +9,7 @@ import serpiente.Serpiente;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import java.awt.Toolkit;
 import java.awt.Font;
@@ -507,7 +508,6 @@ public class Calculadora_GUI {
 							{
 								String texto=textField.getText();
 //								String[] array = texto.split("\\|");
-//								
 //								String textoPRO = array[array.length -1];
 								if(texto.toString().contains("."))
 								{
@@ -620,6 +620,47 @@ public class Calculadora_GUI {
 					Serpiente t = new Serpiente();
 			     	t.setVisible(true);
 				}
+				
+				Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
+				String entrada = textField.getText();
+				StringBuilder EntradaBuilder = new StringBuilder(entrada);
+				StringBuilder Cadenas = new StringBuilder();
+				try (Scanner sc = new Scanner(entrada))
+				{
+					sc.useDelimiter("\\s*[-*+/ ]\\s*");
+					while(sc.hasNext())
+					{
+						Cadenas.append(sc.next()+" ");
+					}
+				}
+				String[] arrayNumeros = Cadenas.toString().split("\\ ");
+				String Operacion = EntradaBuilder.subSequence(EntradaBuilder.indexOf(arrayNumeros[1])-1,EntradaBuilder.indexOf(arrayNumeros[1])).toString();
+				Double resultado = 0.0;
+				if(Operacion.equals("+"))
+				{
+					Double uno = Double.parseDouble(arrayNumeros[0]);
+					Double dos = Double.parseDouble(arrayNumeros[1]);
+					resultado = RealCalculator.suma(uno, dos);
+				}
+				if(Operacion.equals("-"))
+				{
+					Double uno = Double.parseDouble(arrayNumeros[0]);
+					Double dos = Double.parseDouble(arrayNumeros[1]);
+					resultado = RealCalculator.resta(uno, dos);
+				}
+				if(Operacion.equals("*"))
+				{
+					Double uno = Double.parseDouble(arrayNumeros[0]);
+					Double dos = Double.parseDouble(arrayNumeros[1]);
+					resultado = RealCalculator.mult(uno, dos);
+				}
+				if(Operacion.equals("/"))
+				{
+					Double uno = Double.parseDouble(arrayNumeros[0]);
+					Double dos = Double.parseDouble(arrayNumeros[1]);
+					resultado = RealCalculator.divide(uno, dos);
+				}
+				System.out.println(resultado);
 				
 				
 			}
