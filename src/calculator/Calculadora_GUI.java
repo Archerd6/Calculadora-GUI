@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+
+import serpiente.Serpiente;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -560,7 +563,11 @@ public class Calculadora_GUI {
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				
+				if(textField.getText().equals("D"))
+				{
+					Serpiente t = new Serpiente();
+			     	t.setVisible(true);
+				}
 			}
 		});
 		btn_igual.setBackground(new Color(232, 98, 76));
