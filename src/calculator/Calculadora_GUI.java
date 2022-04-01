@@ -543,16 +543,30 @@ public class Calculadora_GUI {
 		
 		JButton btn_Primo = new JButton("P?");
 		btn_Primo.setBackground(SystemColor.scrollbar);
-		btn_Primo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-//				String answer;
-//				second=Double.parseDouble(textField.getText());
-//				if(operation=="+")
-//				{
-//					result=first+second;
-//					answer=String.format("%.2f", result);
-//					textField.setText(answer);
-//				}
+		btn_Primo.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				// Es un numero? Si no no hago nada
+				String str = textField.getText();
+				Boolean EsNumero;
+				try
+				{  
+				    Integer.parseInt(str);  
+				    EsNumero = true;
+				}
+				catch(NumberFormatException exepcion)
+				{  
+					EsNumero = false;  
+				}
+				
+				if(EsNumero)
+				{
+					int EsPrimo = Integer.parseInt(str);
+					Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
+					Boolean Respuesta = RealCalculator.esPrimo(EsPrimo);
+					textField.setText(Respuesta.toString());
+				}
 			}
 		});
 		btn_Primo.setBounds(134, 321, 52, 44);
@@ -622,9 +636,7 @@ public class Calculadora_GUI {
 		{
 			public void actionPerformed(ActionEvent e)
 			{
-				// TODO Factorial
-				// TODO Primo
-				if(textField.getText().equals("12345"))
+				if(textField.getText().equals("12345D"))
 				{
 					Serpiente t = new Serpiente();
 			     	t.setVisible(true);
@@ -650,35 +662,72 @@ public class Calculadora_GUI {
 				if(arrayNumeros.length > 1)
 				{
 					String Operacion = EntradaBuilder.subSequence(EntradaBuilder.lastIndexOf(arrayNumeros[1])-1,EntradaBuilder.lastIndexOf(arrayNumeros[1])).toString();
+					if(!Operacion.equals("+") && !Operacion.equals("-") && !Operacion.equals("*") && !Operacion.equals("/"))
+					{
+						// Combinado *- /-
+						Operacion =EntradaBuilder.subSequence(EntradaBuilder.lastIndexOf(arrayNumeros[1])-3,EntradaBuilder.lastIndexOf(arrayNumeros[1])-1).toString();;
+					}
 					Double resultado = 0.0;
+					Double uno = Double.parseDouble(arrayNumeros[0]);
+					Double dos;
+					try
+					{
+						dos = Double.parseDouble(arrayNumeros[1]);
+					}
+					catch(Exception ex)
+					{
+						dos = Double.parseDouble(arrayNumeros[2]);
+					}
+					
 					if(Operacion.equals("+"))
 					{
-						Double uno = Double.parseDouble(arrayNumeros[0]);
-						Double dos = Double.parseDouble(arrayNumeros[1]);
 						resultado = RealCalculator.suma(uno, dos);
 					}
 					if(Operacion.equals("-"))
 					{
-						Double uno = Double.parseDouble(arrayNumeros[0]);
-						Double dos = Double.parseDouble(arrayNumeros[1]);
 						resultado = RealCalculator.resta(uno, dos);
 					}
 					if(Operacion.equals("*"))
 					{
-						Double uno = Double.parseDouble(arrayNumeros[0]);
-						Double dos = Double.parseDouble(arrayNumeros[1]);
 						resultado = RealCalculator.mult(uno, dos);
 					}
 					if(Operacion.equals("/"))
 					{
-						Double uno = Double.parseDouble(arrayNumeros[0]);
-						Double dos = Double.parseDouble(arrayNumeros[1]);
 						resultado = RealCalculator.divide(uno, dos);
+					}
+					if(Operacion.equals("*-"))
+					{
+						resultado = RealCalculator.mult(uno, -dos);
+					}
+					if(Operacion.equals("/-"))
+					{
+						resultado = RealCalculator.divide(uno, -dos);
 					}
 					System.out.println(entrada+" |Primer calculo -> |"+resultado);
 					textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
 					System.out.println(EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
 				}
+				
+				//Comprobamos !
+//				System.out.println();
+				if(entrada.contains("!"))
+				{
+//					System.out.println(EntradaBuilder.substring(0,EntradaBuilder.indexOf("!")));
+					int aFactorial = Integer.parseInt(EntradaBuilder.substring(0,EntradaBuilder.indexOf("!")));
+					String textfield = "";
+					try
+					{
+						Integer resultado = RealCalculator.fact(aFactorial);
+						textfield = resultado.toString();
+					}
+					catch(IllegalArgumentException NumeroMuGrande)
+					{
+						textfield = NumeroMuGrande.toString();
+					}
+					textField.setText(textfield);
+				}
+				
+				
 			}
 		});
 		btn_igual.setBackground(new Color(232, 98, 76));
