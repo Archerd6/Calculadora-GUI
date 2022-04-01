@@ -261,6 +261,12 @@ public class Calculadora_GUI {
 						{
 							String texto=sb.subSequence(0, sb.length()-1)+btn_mas.getText();
 							textField.setText(texto);
+							
+							if(sb.subSequence(sb.length()-1, sb.length()).equals("-"))
+							{
+								String texto2=sb.subSequence(0, sb.length()-1).toString();
+								textField.setText(texto2);
+							}
 						}
 					}
 				}
