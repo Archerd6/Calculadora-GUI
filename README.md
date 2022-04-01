@@ -25,5 +25,4 @@ David Ramírez Arco
 
 
 
-###### Versión Java:
-###### **JDK 13**
+###### Versión Java:   JDK 13
