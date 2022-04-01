@@ -713,18 +713,32 @@ public class Calculadora_GUI {
 				if(entrada.contains("!"))
 				{
 //					System.out.println(EntradaBuilder.substring(0,EntradaBuilder.indexOf("!")));
-					int aFactorial = Integer.parseInt(EntradaBuilder.substring(0,EntradaBuilder.indexOf("!")));
-					String textfield = "";
+					String EsUnNumero = EntradaBuilder.substring(0,EntradaBuilder.indexOf("!"));
+					Boolean EsNumero;
 					try
-					{
-						Integer resultado = RealCalculator.fact(aFactorial);
-						textfield = resultado.toString();
+					{  
+					    Integer.parseInt(EsUnNumero);  
+					    EsNumero = true;
 					}
-					catch(IllegalArgumentException NumeroMuGrande)
-					{
-						textfield = NumeroMuGrande.toString();
+					catch(NumberFormatException exepcion)
+					{  
+						EsNumero = false;  
 					}
-					textField.setText(textfield);
+					if(EsNumero)
+					{
+						int aFactorial = Integer.parseInt(EntradaBuilder.substring(0,EntradaBuilder.indexOf("!")));
+						String textfield = "";
+						try
+						{
+							Integer resultado = RealCalculator.fact(aFactorial);
+							textfield = resultado.toString();
+						}
+						catch(IllegalArgumentException NumeroMuGrande)
+						{
+							textfield = NumeroMuGrande.toString();
+						}
+						textField.setText(textfield);
+					}
 				}
 				
 				
