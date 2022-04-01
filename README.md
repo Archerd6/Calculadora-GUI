@@ -27,5 +27,5 @@ David Ramírez
 
 <br>
 <br>
-*Versión Java:*
-<br>*JDK 13*
+* Versión Java: *
+<br>* JDK 13 *
