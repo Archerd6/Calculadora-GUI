@@ -1,8 +1,6 @@
 # Calculadora-GUI
 Interfaz gráfica de usuario para la calculadora desarrollada anteriormente
 <br>
-`(Ingeniería del Software Avanzada)`
-<br>
 <br>
 David Ramírez
 
@@ -29,5 +27,5 @@ David Ramírez
 
 <br>
 <br>
-### Versión Java:
-JDK 13
+*Versión Java:*
+<br>*JDK 13*
