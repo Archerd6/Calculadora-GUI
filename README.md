@@ -4,7 +4,7 @@ Interfaz gráfica de usuario para la calculadora desarrollada anteriormente
 David Ramírez Arco
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/Archerd6/Calculadora-GUI/master/Imagen_de_la_calculadora.bmp" style="width:20%">
+	<img src="https://raw.githubusercontent.com/Archerd6/Calculadora-GUI/master/Imagen_de_la_calculadora.bmp" style="width:50%">
 </p>
 
 
