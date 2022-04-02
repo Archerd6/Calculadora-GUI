@@ -3,7 +3,7 @@ Interfaz gráfica de usuario para la calculadora desarrollada anteriormente
 <br>
 David Ramírez Arco
 
-![Imagen de la calculadora](Imagen_de_la_calculadora.bmp) {text-align: center;}
+![Imagen de la calculadora](Imagen_de_la_calculadora.bmp){ text-align: center; }
 
 
 
