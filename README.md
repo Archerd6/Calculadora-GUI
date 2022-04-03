@@ -21,9 +21,11 @@ David Ramírez Arco
 - Comprobación de número primo (P?) &nbsp; &nbsp; &nbsp; 89 &nbsp; `P?`
 
 ## Características:
+- Interfaz amigable que no borra los números ni las operaciones cuando escribes nuevas operaciones
+- Solo se realiza una operación cada vez que se pulse `=` aunque puedes poner todas las operaciones que quieras
 - No se puede poner un "." sin nada en pantalla
 - Después de pulsar "." en el mismo no será posible introducir más (Para los siguientes operandos sí)
-- Pulsar una operación después de otra operación sustitulle la operación anterior, salvo si se usa la operación resta para indicar que el segundo valor introducido se trata de un número negativo.
+- Pulsar una operación después de otra operación sustituye la operación anterior (salvo si se usa la operación resta para indicar que el segundo valor introducido se trata de un número negativo).
 
 
 
