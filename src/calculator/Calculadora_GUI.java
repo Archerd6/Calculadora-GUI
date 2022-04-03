@@ -636,6 +636,7 @@ public class Calculadora_GUI {
 		{
 			public void actionPerformed(ActionEvent e)
 			{
+				Boolean IrAlFinal = false;
 				if(textField.getText().equals("12345D"))
 				{
 					Serpiente t = new Serpiente();
@@ -693,7 +694,15 @@ public class Calculadora_GUI {
 					}
 					if(Operacion.equals("/"))
 					{
+						try
+						{
 						resultado = RealCalculator.divide(uno, dos);
+						}
+						catch(ArithmeticException ex)
+						{
+							IrAlFinal = true;
+							textField.setText("No se puede entre cero");
+						}
 					}
 					if(Operacion.equals("*-"))
 					{
@@ -704,7 +713,10 @@ public class Calculadora_GUI {
 						resultado = RealCalculator.divide(uno, -dos);
 					}
 					System.out.println(entrada+" |Primer calculo -> |"+resultado);
-					textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
+					if(!IrAlFinal)
+					{
+						textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
+					}
 					System.out.println(EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
 				}
 				
