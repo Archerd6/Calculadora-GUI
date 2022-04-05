@@ -666,7 +666,7 @@ public class Calculadora_GUI {
 					if(!Operacion.equals("+") && !Operacion.equals("-") && !Operacion.equals("*") && !Operacion.equals("/"))
 					{
 						// Combinado *- /-
-						Operacion =EntradaBuilder.subSequence(EntradaBuilder.indexOf("-")-1,EntradaBuilder.indexOf("-")+1).toString();;
+						Operacion =EntradaBuilder.subSequence(EntradaBuilder.lastIndexOf("-")-1,EntradaBuilder.lastIndexOf("-")+1).toString();;
 					}
 					Double resultado = 0.0;
 					Double uno = Double.parseDouble(arrayNumeros[0]);
