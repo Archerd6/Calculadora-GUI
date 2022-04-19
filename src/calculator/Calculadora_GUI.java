@@ -747,7 +747,7 @@ public class Calculadora_GUI {
 						}
 						catch(IllegalArgumentException NumeroMuGrande)
 						{
-							textfield = NumeroMuGrande.toString();
+							textfield = "Numero demasiado grande";
 						}
 						textField.setText(textfield);
 					}
