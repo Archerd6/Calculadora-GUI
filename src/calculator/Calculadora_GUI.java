@@ -528,38 +528,7 @@ public class Calculadora_GUI {
 		frmCalculadora.getContentPane().add(btn_dot);
 		btn_dot.setFocusable(false);
 		
-		JButton btn_Primo = new JButton("P?");
-		btn_Primo.setBackground(SystemColor.scrollbar);
-		btn_Primo.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				// Es un numero? Si no no hago nada
-				String str = textField.getText();
-				Boolean EsNumero;
-				try
-				{  
-				    Integer.parseInt(str);  
-				    EsNumero = true;
-				}
-				catch(NumberFormatException exepcion)
-				{  
-					EsNumero = false;  
-				}
 				
-				if(EsNumero)
-				{
-					int EsPrimo = Integer.parseInt(str);
-					Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
-					Boolean Respuesta = RealCalculator.esPrimo(EsPrimo);
-					textField.setText(Respuesta.toString());
-				}
-			}
-		});
-		btn_Primo.setBounds(134, 321, 52, 44);
-		frmCalculadora.getContentPane().add(btn_Primo);
-		btn_Primo.setFocusable(false);
-		
 		JButton btn_fact = new JButton("!");
 		btn_fact.setBackground(SystemColor.scrollbar);
 		btn_fact.addActionListener(new ActionListener()
@@ -617,6 +586,60 @@ public class Calculadora_GUI {
 		btn_fact.setBounds(200, 321, 52, 44);
 		frmCalculadora.getContentPane().add(btn_fact);
 		btn_fact.setFocusable(false);
+		
+		JButton btn_Primo = new JButton("P?");
+		btn_Primo.setBackground(SystemColor.scrollbar);
+		btn_Primo.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				// Es un numero? Si no no hago nada
+				String str = textField.getText();
+				Boolean EsNumero;
+				try
+				{  
+				    Integer.parseInt(str);  
+				    EsNumero = true;
+				}
+				catch(NumberFormatException exepcion)
+				{  
+					EsNumero = false;  
+				}
+				
+				if(EsNumero)
+				{
+					int EsPrimo = Integer.parseInt(str);
+					Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
+					Boolean Respuesta = RealCalculator.esPrimo(EsPrimo);
+					textField.setText(Respuesta.toString());
+					
+					btn_0.setEnabled(false);
+					btn_00.setEnabled(false);
+					btn_1.setEnabled(false);
+					btn_2.setEnabled(false);
+					btn_3.setEnabled(false);
+					btn_4.setEnabled(false);
+					btn_5.setEnabled(false);
+					btn_6.setEnabled(false);
+					btn_7.setEnabled(false);
+					btn_8.setEnabled(false);
+					btn_9.setEnabled(false);
+					btn_B.setEnabled(false);
+					btn_divide.setEnabled(false);
+					btn_dot.setEnabled(false);
+					btn_fact.setEnabled(false);
+					btn_mas.setEnabled(false);
+					btn_menos.setEnabled(false);
+					btn_por.setEnabled(false);
+					btn_Primo.setEnabled(false);
+					textField.setEditable(false);
+				}
+			}
+		});
+		btn_Primo.setBounds(134, 321, 52, 44);
+		frmCalculadora.getContentPane().add(btn_Primo);
+		btn_Primo.setFocusable(false);
+
 		
 		JButton btn_igual = new JButton("=");
 		btn_igual.addActionListener(new ActionListener()
@@ -795,6 +818,8 @@ public class Calculadora_GUI {
 				btn_menos.setEnabled(true);
 				btn_por.setEnabled(true);
 				btn_Primo.setEnabled(true);
+				
+				textField.setEditable(true);
 			}
 		});
 		btn_C.setBounds(72, 101, 52, 44);
