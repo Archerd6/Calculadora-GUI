@@ -123,19 +123,6 @@ public class Calculadora_GUI {
 		frmCalculadora.getContentPane().add(btn_1);
 		btn_1.setFocusable(false);
 		
-		JButton btn_C = new JButton("C");
-		btn_C.setBackground(SystemColor.scrollbar);
-		btn_C.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent e)
-			{
-				textField.setText("");
-			}
-		});
-		btn_C.setBounds(72, 101, 52, 44);
-		frmCalculadora.getContentPane().add(btn_C);
-		btn_C.setFocusable(false);
-		
 		JButton btn_8 = new JButton("8");
 		btn_8.setBackground(SystemColor.scrollbar);
 		btn_8.addActionListener(new ActionListener() {
@@ -712,7 +699,7 @@ public class Calculadora_GUI {
 					{
 						resultado = RealCalculator.divide(uno, -dos);
 					}
-					System.out.println(entrada+" |Primer calculo -> |"+resultado);
+					System.out.println(entrada+" | before -> after |"+resultado);
 					if(!IrAlFinal)
 					{
 						textField.setText(resultado+EntradaBuilder.substring((EntradaBuilder.lastIndexOf(arrayNumeros[1]))+arrayNumeros[1].length()));
@@ -747,7 +734,27 @@ public class Calculadora_GUI {
 						}
 						catch(IllegalArgumentException NumeroMuGrande)
 						{
-							textfield = "Numero demasiado grande";
+							textfield = "Calculation too large";
+							btn_0.setEnabled(false);
+							btn_00.setEnabled(false);
+							btn_1.setEnabled(false);
+							btn_2.setEnabled(false);
+							btn_3.setEnabled(false);
+							btn_4.setEnabled(false);
+							btn_5.setEnabled(false);
+							btn_6.setEnabled(false);
+							btn_7.setEnabled(false);
+							btn_8.setEnabled(false);
+							btn_9.setEnabled(false);
+							btn_B.setEnabled(false);
+							btn_divide.setEnabled(false);
+							btn_dot.setEnabled(false);
+							btn_fact.setEnabled(false);
+							btn_igual.setEnabled(false);
+							btn_mas.setEnabled(false);
+							btn_menos.setEnabled(false);
+							btn_por.setEnabled(false);
+							btn_Primo.setEnabled(false);
 						}
 						textField.setText(textfield);
 					}
@@ -760,6 +767,39 @@ public class Calculadora_GUI {
 		btn_igual.setBounds(10, 376, 242, 38);
 		frmCalculadora.getContentPane().add(btn_igual);
 		btn_igual.setFocusable(false);
+		
+		JButton btn_C = new JButton("C");
+		btn_C.setBackground(SystemColor.scrollbar);
+		btn_C.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent e)
+			{
+				textField.setText("");
+				btn_0.setEnabled(true);
+				btn_00.setEnabled(true);
+				btn_1.setEnabled(true);
+				btn_2.setEnabled(true);
+				btn_3.setEnabled(true);
+				btn_4.setEnabled(true);
+				btn_5.setEnabled(true);
+				btn_6.setEnabled(true);
+				btn_7.setEnabled(true);
+				btn_8.setEnabled(true);
+				btn_9.setEnabled(true);
+				btn_B.setEnabled(true);
+				btn_divide.setEnabled(true);
+				btn_dot.setEnabled(true);
+				btn_fact.setEnabled(true);
+				btn_igual.setEnabled(true);
+				btn_mas.setEnabled(true);
+				btn_menos.setEnabled(true);
+				btn_por.setEnabled(true);
+				btn_Primo.setEnabled(true);
+			}
+		});
+		btn_C.setBounds(72, 101, 52, 44);
+		frmCalculadora.getContentPane().add(btn_C);
+		btn_C.setFocusable(false);
 		
 		JEditorPane editorPane = new JEditorPane();
 		editorPane.setBackground(SystemColor.controlShadow);
