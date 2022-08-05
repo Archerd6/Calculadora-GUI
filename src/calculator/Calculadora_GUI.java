@@ -5,8 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-import serpiente.Serpiente;
-
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.Scanner;
@@ -91,6 +89,7 @@ public class Calculadora_GUI {
 		});
 		
 		textField = new JTextField();
+		textField.setEditable(false);
 		textField.setFont(new Font("Tahoma", Font.BOLD, 18));
 		textField.setBounds(10, 11, 242, 64);
 		frmCalculadora.getContentPane().add(textField);
@@ -647,11 +646,6 @@ public class Calculadora_GUI {
 			public void actionPerformed(ActionEvent e)
 			{
 				Boolean IrAlFinal = false;
-				if(textField.getText().equals("12345D"))
-				{
-					Serpiente t = new Serpiente();
-			     	t.setVisible(true);
-				}
 				
 				Calculadora_Archerd6 RealCalculator = new Calculadora_Archerd6();
 				String entrada = textField.getText();
@@ -818,8 +812,6 @@ public class Calculadora_GUI {
 				btn_menos.setEnabled(true);
 				btn_por.setEnabled(true);
 				btn_Primo.setEnabled(true);
-				
-				textField.setEditable(true);
 			}
 		});
 		btn_C.setBounds(72, 101, 52, 44);
